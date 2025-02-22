@@ -1,48 +1,55 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import React from "react";
 import "./ListContainer.css";
 
 const ListContainer = ({
   data,
   listNumber,
   isChecked,
+  isClicked,
+  list3Checked,
   setIsChecked,
   handleClick,
 }) => {
+  const dataLength = () => {
+    return isChecked && isClicked ? `(${data.length})` : null;
+  };
+
   return (
     <div className="list">
       <label className="checkbox">
         <input
           type="checkbox"
           value={isChecked}
-          onChange={() => setIsChecked(!isChecked)}
+          checked={isChecked}
+          onChange={setIsChecked}
+          disabled={list3Checked}
         />
-        List {listNumber}
+        List {listNumber} {dataLength()}
       </label>
       <div className="card">
-        {data.map((item) => {
-          if (item.list_number === listNumber || listNumber === 3) {
-            return (
-              <div
-                className="card_items"
-                key={item.id}
-                onClick={() => handleClick(item, listNumber)}
-              >
-                <p>{item.name}</p>
-                <p>{item.description}</p>
-                {item.list_number === 1 ? (
-                  <ArrowRight style={{ alignSelf: "flex-end" }} />
-                ) : item.list_number === 2 ? (
-                  <ArrowLeft style={{ alignSelf: "flex-end" }} />
-                ) : (
-                  <></>
-                )}
-              </div>
-            );
-          }
-        })}
+        {data.map((item) => (
+          <div
+            className="card_items"
+            key={item.id}
+            onClick={() => {
+              if (list3Checked && isClicked) handleClick(item, listNumber);
+            }}
+          >
+            <p className="list_name">{item.name}</p>
+            <p className="list_description">{item.description}</p>
+            {item.list_number === 1 && list3Checked && isClicked ? (
+              <ArrowRight style={{ alignSelf: "flex-end" }} />
+            ) : item.list_number === 2 && list3Checked && isClicked ? (
+              <ArrowLeft style={{ alignSelf: "flex-end" }} />
+            ) : (
+              <></>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default ListContainer;
+export default React.memo(ListContainer);

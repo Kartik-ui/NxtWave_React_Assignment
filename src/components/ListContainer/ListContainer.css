@@ -18,7 +18,7 @@
   min-width: 20rem;
   border-radius: 0.5rem;
   background-color: #eff6ff;
-  max-height: 49rem;
+  max-height: 75vh;
   overflow-y: scroll;
 }
 
@@ -37,4 +37,43 @@
   border-radius: 1rem;
   background-color: #fff;
   cursor: pointer;
+}
+
+.list_name {
+  font-weight: 600;
+}
+
+.list_description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .checkbox {
+    font-size: 1.1rem;
+  }
+
+  .list {
+    padding: 1.5rem 0.8rem;
+    min-width: auto;
+  }
+
+  .card_items {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkbox {
+    font-size: 1rem;
+  }
+
+  .list {
+    padding: 1rem 0.5rem;
+  }
+
+  .card_items {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
 }

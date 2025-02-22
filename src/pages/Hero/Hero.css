@@ -20,7 +20,7 @@
   margin-bottom: 0.5rem;
 }
 
-button {
+.hero_container > button {
   color: #fff;
   background-color: #3b82f6;
   padding: 1rem;
@@ -30,4 +30,93 @@ button {
   font-size: 1rem;
   border-radius: 0.6rem;
   cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.cancel_btn {
+  color: #000;
+  background-color: #fff;
+  padding: 0.7rem 1rem;
+  margin: 1rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.update_btn {
+  color: #fff;
+  background-color: #3b82f6;
+  padding: 0.7rem 1rem;
+  margin: 1rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.loader_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 75vh;
+}
+
+@media (max-width: 768px) {
+  .hero_container {
+    margin: auto 1.5rem;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .list_container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero_container h1 {
+    font-size: 2rem;
+  }
+
+  .hero_container > button,
+  .cancel_btn,
+  .update_btn,
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    margin: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero_container {
+    margin: auto 1rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .hero_container h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero_container > button,
+  .cancel_btn,
+  .update_btn,
+  .btn {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+    margin: 0.6rem;
+  }
+
+  .error_message {
+    font-size: 0.9rem;
+  }
 }

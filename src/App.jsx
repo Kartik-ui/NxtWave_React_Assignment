@@ -1,6 +1,6 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
-import FailureView from "./pages/FailureView/FailureView";
+import FailureView from "./components/FailureView/FailureView";
 import Hero from "./pages/Hero/Hero";
 
 function App() {
