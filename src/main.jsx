@@ -6,7 +6,7 @@ import "./index.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/NxtWave_React_Assignment">
       <App />
     </BrowserRouter>
   </StrictMode>
